@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/linearLayout"
+    android:layout_width="match_parent"
+    android:background="#EEEEEE"
+    android:layout_height="match_parent">
+
+    <FrameLayout
+        android:id="@+id/preview_display_layout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginEnd="1dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+    </FrameLayout>
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:minHeight="?attr/actionBarSize"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/tv_back"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:padding="30px"
+                android:text="Back"
+                android:textAlignment="center"
+                android:textColor="@color/back_color"
+                android:textSize="18sp"
+                android:textStyle="bold"
+
+                app:layout_constraintBottom_toTopOf="@+id/guideline4"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/guideline4" />
+
+            <ImageView
+                android:id="@+id/imageView15g"
+                android:layout_width="120px"
+                android:layout_height="120px"
+                android:padding="20px"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/camerabutton"
+                app:layout_constraintBottom_toTopOf="@+id/guideline4"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/guideline4"
+                app:srcCompat="@drawable/ic_info" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.50" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.5" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.appcompat.widget.Toolbar>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar2">
+
+        <ImageView
+            android:id="@+id/imageView15g5"
+            android:layout_width="120px"
+            android:layout_height="120px"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/camerabutton"
+            android:padding="20px"
+            app:layout_constraintBottom_toTopOf="@+id/imageView15g3"
+            app:layout_constraintStart_toStartOf="@+id/imageView15g3"
+            app:srcCompat="@drawable/ic_zoom" />
+
+        <ImageView
+            android:id="@+id/imageView15g3"
+            android:layout_width="120px"
+            android:layout_height="120px"
+            android:background="@drawable/camerabutton"
+            android:padding="20px"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView15g2"
+            app:layout_constraintStart_toStartOf="@+id/tabLayout"
+            app:srcCompat="@drawable/ic_diamond_left" />
+
+        <ImageView
+            android:id="@+id/imageView15g2"
+            android:layout_width="120px"
+            android:layout_height="120px"
+            android:layout_marginStart="16dp"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/camerabutton"
+            android:padding="20px"
+            app:layout_constraintBottom_toTopOf="@+id/constraintLayout2"
+            app:layout_constraintStart_toEndOf="@+id/imageView15g3"
+            app:srcCompat="@drawable/ic_diamond_right" />
+
+        <ImageView
+            android:id="@+id/imageView15g4"
+            android:layout_width="120px"
+            android:layout_height="120px"
+            android:layout_marginStart="16dp"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/camerabutton"
+            android:padding="20px"
+            app:layout_constraintBottom_toTopOf="@+id/imageView15g3"
+            app:layout_constraintStart_toEndOf="@+id/imageView15g3"
+            app:srcCompat="@drawable/ic_hand_f1" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/camerabutton"
+            app:layout_constraintBottom_toTopOf="@+id/tabLayout"
+            app:layout_constraintEnd_toEndOf="@+id/tabLayout"
+            app:layout_constraintStart_toStartOf="@+id/tabLayout">
+
+            <ImageView
+                android:id="@+id/imageView15g7"
+                android:layout_width="120px"
+                android:layout_height="120px"
+                android:background="@drawable/camerabutton"
+                android:padding="20px"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_globe" />
+
+            <SeekBar
+                android:id="@+id/seekBar2"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/imageView15g7"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <ImageView
+            android:id="@+id/imageView15g6"
+            android:layout_width="120px"
+            android:layout_height="120px"
+            android:background="@drawable/camerabutton"
+            android:padding="20px"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView15g3"
+            app:layout_constraintEnd_toEndOf="@+id/tabLayout"
+            app:layout_constraintTop_toTopOf="@+id/imageView15g5"
+            app:srcCompat="@drawable/ic_camera_flip" />
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tabLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            app:tabIndicatorHeight="0px"
+            app:tabSelectedTextColor="@color/white"
+            app:tabTextColor="@color/white"
+            android:layout_marginBottom="12dp"
+            android:background="@drawable/tab_color_selector"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:tabBackground="@drawable/tab_block_selector"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Hand" >
+
+            </com.google.android.material.tabs.TabItem>
+
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Neck" />
+
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ears" />
+        </com.google.android.material.tabs.TabLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -50,12 +50,6 @@ public class HandsResultImageView extends AppCompatImageView {
     setScaleType(ScaleType.FIT_CENTER);
   }
 
-  /**
-   * Sets a {@link HandsResult} to render.
-   *
-   * @param result a {@link HandsResult} object that contains the solution outputs and the input
-   *     {@link Bitmap}.
-   */
   public void setHandsResult(HandsResult result) {
     if (result == null) {
       return;

@@ -11,7 +11,7 @@
         android:id="@+id/imageview"
         android:layout_width="0dp"
         android:layout_height="158dp"
-        android:padding="20px"
+        android:padding="50px"
         android:src="@drawable/img"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -34,7 +34,7 @@
             app:layout_constraintBottom_toBottomOf="@+id/imageView"
             app:layout_constraintEnd_toStartOf="@+id/textview"
             app:layout_constraintTop_toTopOf="@+id/imageView"
-            app:srcCompat="@drawable/weg" />
+            app:srcCompat="@drawable/ic_weight" />
 
         <TextView
             android:id="@+id/textview"
@@ -66,7 +66,7 @@
             android:layout_marginTop="8dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/dmd" />
+            app:srcCompat="@drawable/ic_diamond_1" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

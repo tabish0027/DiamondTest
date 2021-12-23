@@ -22,7 +22,9 @@ import android.provider.MediaStore;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.FrameLayout;
 import android.widget.GridView;
+import android.widget.TextView;
 
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
@@ -43,10 +45,11 @@ import java.io.IOException;
 import java.io.InputStream;
 
 /** Main activity of MediaPipe Hands app. */
-public class MainActivity extends AppCompatActivity {
+public class activity_camera extends AppCompatActivity {
   private static final String TAG = "MainActivity";
 
   private Hands hands;
+  private TextView tv_back;
   // Run the pipeline and the model inference on GPU or CPU.
   private static final boolean RUN_ON_GPU = true;
 
@@ -73,30 +76,29 @@ public class MainActivity extends AppCompatActivity {
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
-    setContentView(R.layout.activity_main);
-    gridView = (GridView) findViewById(R.id.gridview);
-    String[] values = {
-            "Java", "CSS3", "Android", "jQuery", "PHP", "MySpace",
-            "HTML5", "Javascript", "MySQL", "Python", "Swift",
-            "WordPress", "Facebook", "Youtube", "Twitter"
-    } ;
-    GridAdapter gridAdapter = new GridAdapter(this, values);
+    setContentView(R.layout.activity_camera);
+    tv_back = findViewById(R.id.tv_back);
 
-    gridView.setAdapter(gridAdapter);
-    /*setupStaticImageDemoUiComponents();
+    setupStaticImageDemoUiComponents();
     setupVideoDemoUiComponents();
     setupLiveDemoUiComponents();
     if (inputSource == InputSource.CAMERA) {
       return;
     }
     stopCurrentPipeline();
-    setupStreamingModePipeline(InputSource.CAMERA);*/
+    setupStreamingModePipeline(InputSource.CAMERA);
+    tv_back.setOnClickListener(new View.OnClickListener() {
+      @Override
+      public void onClick(View view) {
+        activity_camera.this.finish();
+      }
+    });
   }
 
   @Override
   protected void onResume() {
     super.onResume();
-    /*if (inputSource == InputSource.CAMERA) {
+    if (inputSource == InputSource.CAMERA) {
       // Restarts the camera and the opengl surface rendering.
       cameraInput = new CameraInput(this);
       cameraInput.setNewFrameListener(textureFrame -> hands.send(textureFrame));
@@ -104,18 +106,18 @@ public class MainActivity extends AppCompatActivity {
       glSurfaceView.setVisibility(View.VISIBLE);
     } else if (inputSource == InputSource.VIDEO) {
       videoInput.resume();
-    }*/
+    }
   }
 
   @Override
   protected void onPause() {
     super.onPause();
-    /*if (inputSource == InputSource.CAMERA) {
+    if (inputSource == InputSource.CAMERA) {
       glSurfaceView.setVisibility(View.GONE);
       cameraInput.close();
     } else if (inputSource == InputSource.VIDEO) {
       videoInput.pause();
-    }*/
+    }
   }
 
   private Bitmap downscaleBitmap(Bitmap originalBitmap) {
@@ -187,7 +189,7 @@ public class MainActivity extends AppCompatActivity {
                 }
               }
             });
-    Button loadImageButton = findViewById(R.id.button_load_picture);
+    /*Button loadImageButton = findViewById(R.id.button_load_picture);
     loadImageButton.setOnClickListener(
         v -> {
           if (inputSource != InputSource.IMAGE) {
@@ -198,7 +200,7 @@ public class MainActivity extends AppCompatActivity {
           Intent pickImageIntent = new Intent(Intent.ACTION_PICK);
           pickImageIntent.setDataAndType(MediaStore.Images.Media.INTERNAL_CONTENT_URI, "image/*");
           imageGetter.launch(pickImageIntent);
-        });
+        });*/
     imageView = new HandsResultImageView(this);
   }
 
@@ -226,14 +228,12 @@ public class MainActivity extends AppCompatActivity {
         });
     hands.setErrorListener((message, e) -> Log.e(TAG, "MediaPipe Hands error:" + message));
 
-
-
     // Updates the preview layout.
-    //FrameLayout frameLayout = findViewById(R.id.preview_display_layout);
-    //frameLayout.removeAllViewsInLayout();
-    //imageView.setImageDrawable(null);
-    //frameLayout.addView(imageView);
-    //imageView.setVisibility(View.VISIBLE);
+    FrameLayout frameLayout = findViewById(R.id.preview_display_layout);
+    frameLayout.removeAllViewsInLayout();
+    imageView.setImageDrawable(null);
+    frameLayout.addView(imageView);
+    imageView.setVisibility(View.VISIBLE);
 
 
   }
@@ -259,7 +259,7 @@ public class MainActivity extends AppCompatActivity {
                 }
               }
             });
-    Button loadVideoButton = findViewById(R.id.button_load_video);
+   /* Button loadVideoButton = findViewById(R.id.button_load_video);
     loadVideoButton.setOnClickListener(
         v -> {
           stopCurrentPipeline();
@@ -268,20 +268,20 @@ public class MainActivity extends AppCompatActivity {
           Intent pickVideoIntent = new Intent(Intent.ACTION_PICK);
           pickVideoIntent.setDataAndType(MediaStore.Video.Media.INTERNAL_CONTENT_URI, "video/*");
           videoGetter.launch(pickVideoIntent);
-        });
+        });*/
   }
 
   /** Sets up the UI components for the live demo with camera input. */
   private void setupLiveDemoUiComponents() {
     Button startCameraButton = findViewById(R.id.button_start_camera);
-    startCameraButton.setOnClickListener(
+/*    startCameraButton.setOnClickListener(
         v -> {
           if (inputSource == InputSource.CAMERA) {
             return;
           }
           stopCurrentPipeline();
           setupStreamingModePipeline(InputSource.CAMERA);
-        });
+        });*/
   }
 
   /** Sets up core workflow for streaming mode. */
@@ -325,19 +325,19 @@ public class MainActivity extends AppCompatActivity {
     }
 
     // Updates the preview layout.
-    //FrameLayout frameLayout = findViewById(R.id.preview_display_layout);
-    //imageView.setVisibility(View.GONE);
-    //frameLayout.removeAllViewsInLayout();
-    //frameLayout.addView(glSurfaceView);
-    //glSurfaceView.setVisibility(View.VISIBLE);
-    //frameLayout.requestLayout();
+    FrameLayout frameLayout = findViewById(R.id.preview_display_layout);
+    imageView.setVisibility(View.GONE);
+    frameLayout.removeAllViewsInLayout();
+    frameLayout.addView(glSurfaceView);
+    glSurfaceView.setVisibility(View.VISIBLE);
+    frameLayout.requestLayout();
   }
 
   private void startCamera() {
     cameraInput.start(
         this,
         hands.getGlContext(),
-        CameraInput.CameraFacing.FRONT,
+        CameraInput.CameraFacing.BACK,
         glSurfaceView.getWidth(),
         glSurfaceView.getHeight());
   }

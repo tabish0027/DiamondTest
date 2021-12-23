@@ -1,10 +1,12 @@
 package com.ozgur.DiamondTest;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -56,8 +58,12 @@ public class GridAdapter extends BaseAdapter {
         rowView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Intent I = new Intent(GridAdapter.this.context.getApplicationContext(),activity_camera.class);
+                I.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 
-                Toast.makeText(context, "You Clicked "+values[position], Toast.LENGTH_LONG).show();
+                GridAdapter.this.context.getApplicationContext().startActivity(I);
+
+                //Toast.makeText(context, "You Clicked "+values[position], Toast.LENGTH_LONG).show();
 
             }
         });

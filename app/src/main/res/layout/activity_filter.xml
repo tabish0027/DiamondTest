@@ -79,7 +79,7 @@
                 app:layout_constraintBottom_toTopOf="@+id/guideline4"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/guideline4"
-                app:srcCompat="@drawable/cross" />
+                app:srcCompat="@drawable/ic_cancel" />
 
             <androidx.constraintlayout.widget.Guideline
                 android:id="@+id/guideline4"
@@ -112,13 +112,13 @@
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayout41a"
+        android:id="@+id/btn_radiant"
         android:layout_width="95dp"
         android:layout_height="95dp"
         android:layout_marginEnd="8dp"
         android:background="@drawable/border"
-        app:layout_constraintEnd_toStartOf="@+id/constraintLayout44"
-        app:layout_constraintTop_toTopOf="@+id/constraintLayout44" >
+        app:layout_constraintEnd_toStartOf="@+id/btn_oval"
+        app:layout_constraintTop_toTopOf="@+id/btn_oval" >
 
         <TextView
             android:id="@+id/tv_to_size_from11"
@@ -144,13 +144,13 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayout41b"
+        android:id="@+id/btn_cushion"
         android:layout_width="95dp"
         android:layout_height="95dp"
         android:layout_marginStart="8dp"
         android:background="@drawable/border"
-        app:layout_constraintStart_toEndOf="@+id/constraintLayout44"
-        app:layout_constraintTop_toTopOf="@+id/constraintLayout44">
+        app:layout_constraintStart_toEndOf="@+id/btn_oval"
+        app:layout_constraintTop_toTopOf="@+id/btn_oval">
 
         <TextView
             android:id="@+id/tv_to_size_from13"
@@ -176,13 +176,13 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayout41c"
+        android:id="@+id/btn_emerald"
         android:layout_width="95dp"
         android:layout_height="95dp"
         android:layout_marginStart="8dp"
         android:background="@drawable/border"
-        app:layout_constraintBottom_toBottomOf="@+id/constraintLayout2"
-        app:layout_constraintStart_toEndOf="@+id/constraintLayout2" >
+        app:layout_constraintBottom_toBottomOf="@+id/btn_square"
+        app:layout_constraintStart_toEndOf="@+id/btn_square" >
 
         <TextView
             android:id="@+id/tv_to_size_from7"
@@ -208,13 +208,13 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayout41d"
+        android:id="@+id/btn_pear"
         android:layout_width="95dp"
         android:layout_height="95dp"
         android:layout_marginEnd="8dp"
         android:background="@drawable/border"
-        app:layout_constraintBottom_toBottomOf="@+id/constraintLayout41c"
-        app:layout_constraintEnd_toStartOf="@+id/constraintLayout2" >
+        app:layout_constraintBottom_toBottomOf="@+id/btn_emerald"
+        app:layout_constraintEnd_toStartOf="@+id/btn_square" >
 
         <TextView
             android:id="@+id/tv_to_size_from6"
@@ -240,14 +240,14 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayout424"
+        android:id="@+id/btn_heart"
         android:layout_width="107dp"
         android:layout_height="107dp"
         android:layout_marginStart="8dp"
         android:background="@drawable/border"
-        app:layout_constraintBottom_toBottomOf="@+id/constraintLayout4"
-        app:layout_constraintStart_toEndOf="@+id/constraintLayout4"
-        app:layout_constraintTop_toTopOf="@+id/constraintLayout4" >
+        app:layout_constraintBottom_toBottomOf="@+id/btn_round"
+        app:layout_constraintStart_toEndOf="@+id/btn_round"
+        app:layout_constraintTop_toTopOf="@+id/btn_round" >
 
         <TextView
             android:id="@+id/tv_to_size_from8"
@@ -273,14 +273,14 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayout41"
+        android:id="@+id/btn_marquee"
         android:layout_width="107dp"
         android:layout_height="107dp"
         android:layout_marginEnd="8dp"
         android:background="@drawable/border"
-        app:layout_constraintBottom_toBottomOf="@+id/constraintLayout4"
-        app:layout_constraintEnd_toStartOf="@+id/constraintLayout4"
-        app:layout_constraintTop_toTopOf="@+id/constraintLayout4" >
+        app:layout_constraintBottom_toBottomOf="@+id/btn_round"
+        app:layout_constraintEnd_toStartOf="@+id/btn_round"
+        app:layout_constraintTop_toTopOf="@+id/btn_round" >
 
         <TextView
             android:id="@+id/tv_to_size_from9"
@@ -306,7 +306,7 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayout44"
+        android:id="@+id/btn_oval"
         android:layout_width="107dp"
         android:layout_height="107dp"
         android:layout_marginTop="8dp"
@@ -314,7 +314,7 @@
         app:layout_constraintEnd_toStartOf="@+id/guideline2"
         app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="@+id/guideline2"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout4" >
+        app:layout_constraintTop_toBottomOf="@+id/btn_round" >
 
         <TextView
             android:id="@+id/tv_to_size_from12"
@@ -340,7 +340,7 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayout4"
+        android:id="@+id/btn_round"
         android:layout_width="107dp"
         android:layout_height="107dp"
         android:layout_marginTop="8dp"
@@ -348,7 +348,7 @@
         app:layout_constraintEnd_toStartOf="@+id/guideline2"
         app:layout_constraintHorizontal_bias="0.355"
         app:layout_constraintStart_toStartOf="@+id/guideline2"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout2" >
+        app:layout_constraintTop_toBottomOf="@+id/btn_square" >
 
         <TextView
             android:id="@+id/tv_to_size_from10"
@@ -389,7 +389,7 @@
         app:reverseLayout="true" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayout2"
+        android:id="@+id/btn_square"
         android:layout_width="107dp"
         android:layout_height="107dp"
         android:layout_marginTop="8dp"
@@ -427,6 +427,58 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_constraintGuide_percent="0.5" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout5"
+        android:layout_width="409dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="1dp"
+        android:layout_marginEnd="1dp"
+        android:layout_marginBottom="1dp"
+        android:background="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/border_clear"
+            android:text="Clear"
+            android:textColor="#005EB8"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/guideline6"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Button
+            android:id="@+id/button3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="32dp"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/border_apply"
+            android:text="Apply"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/guideline6"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.5" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
